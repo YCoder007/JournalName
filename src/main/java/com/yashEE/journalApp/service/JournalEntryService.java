@@ -30,7 +30,6 @@ public class JournalEntryService {
         JournalEntry saved = journalEntryRwepo.save(journalEntry);
 
         userss.getJournalEntries().add(saved);
-        userss.setUsername(null);
         userService.saveEntry(userss);
     }
 
