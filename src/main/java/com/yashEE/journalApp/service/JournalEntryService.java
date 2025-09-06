@@ -7,6 +7,7 @@ import lombok.Data;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,6 +22,7 @@ public class JournalEntryService {
     @Autowired
     private UserService userService;
 
+    @Transactional
     public  void saveEntry(JournalEntry journalEntry, String users){
         Users userss = userService.findUserName(users);
 
